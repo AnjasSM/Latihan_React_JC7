@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './support/css/bootstrap.css'
+import HeaderBertasbih from './components/HeaderBertasbih';
+import ContentBertasbih from './components/ContentBertasbih';
+import FooterBertasbih from './components/FooterBertasbih';
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1>Halo salam cuy</h1>
+        <HeaderBertasbih 
+          headerText={"Bertasbih commerce"}
+          kulakin={100-99}
+        />
+        <ContentBertasbih>
+          <p>Hay hay hay tuyul</p>
+        </ContentBertasbih>
+        <FooterBertasbih />
       </div>
+      
     );
   }
 }
 
 export default App;
+
