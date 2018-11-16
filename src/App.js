@@ -10,7 +10,7 @@ import FooterBertasbih from './components/FooterBertasbih';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className={"container"}>
         <h1>Halo salam cuy</h1>
         <HeaderBertasbih 
           headerText={"Bertasbih commerce"}
@@ -19,6 +19,7 @@ class App extends Component {
         <ContentBertasbih>
           <p>Hay hay hay tuyul</p>
         </ContentBertasbih>
+        <input type="button"  style= {{backgroundcolor: 'red'}}value="SiapBos" className="btn btn-primary" />
         <FooterBertasbih />
       </div>
       
