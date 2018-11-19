@@ -5,7 +5,7 @@ class ContentBertasbih extends Component {
         return (
             <div>
                 <center>
-                    <p>Selamat anda tertipu</p>
+                    <p>{this.props.contentHeader}</p>
                     {this.props.children}
 
                 </center>
