@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import HeaderBertasbih from './components/HeaderBertasbih';
 import ContentBertasbih from './components/ContentBertasbih';
-import FooterBertasbih from './components/FooterBertasbih';
-import InputBertasbih from './components/InputBertasbih';
+// import FooterBertasbih from './components/FooterBertasbih';
+// import InputBertasbih from './components/InputBertasbih';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
@@ -17,15 +17,17 @@ class App extends Component {
 
   onBtnLoginClick = () => {
     var username = this.refs.username.refs.tbUsername.value;
-    console.log(username)
+    this.setState({ username })
   }
 
   render() {
     var { content } = this.state;
+    var { username } = this.state;
     return (
       <div className={"container-fluid"}>
       <HeaderBertasbih 
         navBrand={"Bertasbih"}
+        username={ username }
           // headerText={"Bertasbih commerce"}
           // kulakin={100-99}
         />
@@ -34,7 +36,7 @@ class App extends Component {
         <Form style={{ margin: "0 auto"}} className="col-3">
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
-          <InputBertasbih type="text" name="username" ref="username" innerRef="tbUsername" id="exampleUsername" placeholder="insert Username" />
+          <Input type="text" name="username" ref="username" innerRef="tbUsername" id="exampleUsername" placeholder="insert Username" />
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword">Password</Label>

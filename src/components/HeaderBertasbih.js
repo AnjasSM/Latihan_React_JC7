@@ -27,6 +27,7 @@ class HeaderTok extends Component {
         });
       }
     render() { 
+        if (this.props.username === "") {
         return(
             // <div>
                 
@@ -67,6 +68,42 @@ class HeaderTok extends Component {
           </div>
 
         )
+    }
+    return (
+    <div>
+    <Navbar color="light" light expand="md">
+      <NavbarBrand href="/">{this.props.navBrand}</NavbarBrand>
+      <NavbarToggler onClick={this.toggle} />
+      <Collapse isOpen={this.state.isOpen} navbar>
+        <Nav className="ml-auto" navbar>
+          {/* <NavItem>
+            <NavLink href="">Register</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="">Login</NavLink>
+          </NavItem> */}
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+              Hello, {this.props.username}
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>
+                Profile
+              </DropdownItem>
+              <DropdownItem>
+                Option
+              </DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </Nav>
+      </Collapse>
+    </Navbar>
+  </div>
+    )
     }
 }
 
