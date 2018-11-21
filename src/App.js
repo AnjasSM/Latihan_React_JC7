@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import { Route } from 'react-router-dom';
 import HeaderBertasbih from './components/HeaderBertasbih';
 import ContentBertasbih from './components/ContentBertasbih';
+import LoginBertasbih from './components/LoginBertasbih';
+import HomeBertasbih from './components/HomeBertasbih';
+
 // import FooterBertasbih from './components/FooterBertasbih';
 // import InputBertasbih from './components/InputBertasbih';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+// import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 
@@ -31,9 +35,15 @@ class App extends Component {
           // headerText={"Bertasbih commerce"}
           // kulakin={100-99}
         />
+        <div>
+          <Route exact path="/" component= { HomeBertasbih }/>
+          <Route path="/login" component={ LoginBertasbih }/>
+        </div>
+
         <ContentBertasbih contentHeader={ content } />
+
         <Button color="danger" onClick={this.onBtnOkClick}>DANGER</Button>
-        <Form style={{ margin: "0 auto"}} className="col-3">
+        {/* <Form style={{ margin: "0 auto"}} className="col-3">
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
           <Input type="text" name="username" ref="username" innerRef="tbUsername" id="exampleUsername" placeholder="insert Username" />
@@ -48,7 +58,7 @@ class App extends Component {
         Login
         </Button>
         
-      </Form>
+      </Form> */}
         
         {/* {<h1>Halo salam cuy</h1> */}
         

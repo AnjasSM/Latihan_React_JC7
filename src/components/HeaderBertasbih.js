@@ -11,6 +11,7 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class HeaderTok extends Component {
     constructor(props) {
@@ -43,7 +44,10 @@ class HeaderTok extends Component {
                     <NavLink href="">Register</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="">Login</NavLink>
+                    {/* <Link to="/login"> */}
+                    <NavLink href="/login">Login</NavLink> 
+                    {/* kalo pake link ngak render ulang headernya jadi lebih enteng*/}
+                    {/* </Link> */}
                   </NavItem>
                   {/* <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
