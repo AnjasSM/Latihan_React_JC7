@@ -8,7 +8,7 @@ class LoginBertasbih extends Component {
     
     onBtnLoginClick = () => {
         var username = this.refs.username.refs.tbUsername.value;
-        this.props.onUserLogin(username)
+        this.props.onUserLogin(username )
     }
 
     render() {

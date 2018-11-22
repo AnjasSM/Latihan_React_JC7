@@ -14,4 +14,4 @@ class ContentBertasbih extends Component {
     }
 }
 
-export default ContentBertasbih;
+export default ContentBertasbih; 
