@@ -13,19 +13,17 @@ import HomeBertasbih from './components/HomeBertasbih';
 
 
 class App extends Component {
-  state = { content: 'Ini content', username: ''}
+  state = { content: 'Ini content' }
 
   onBtnOkClick = () => {
     this.setState({ content: 'Ini comberan'})
   };
   render() {
     var { content } = this.state;
-    var { username } = this.state;
     return (
       <div className={"container-fluid"}>
       <HeaderBertasbih 
         navBrand={"Bertasbih"}
-        username={ username }
           // headerText={"Bertasbih commerce"}
           // kulakin={100-99}
         />

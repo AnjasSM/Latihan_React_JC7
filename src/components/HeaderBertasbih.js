@@ -12,6 +12,7 @@ import {
     DropdownMenu,
     DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
 
 class HeaderTok extends Component {
     constructor(props) {
@@ -44,10 +45,10 @@ class HeaderTok extends Component {
                     <NavLink href="">Register</NavLink>
                   </NavItem>
                   <NavItem>
-                    {/* <Link to="/login"> */}
-                    <NavLink href="/login">Login</NavLink> 
+                    <Link to="/login">
+                    <NavLink href="">Login</NavLink> 
                     {/* kalo pake link ngak render ulang headernya jadi lebih enteng*/}
-                    {/* </Link> */}
+                    </Link>
                   </NavItem>
                   {/* <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
@@ -111,4 +112,8 @@ class HeaderTok extends Component {
     }
 }
 
-export default HeaderTok;
+const mapStateToProps = (state) => {
+  return { username: state.username}
+}
+
+export default connect (mapStateToProps)(HeaderTok);
