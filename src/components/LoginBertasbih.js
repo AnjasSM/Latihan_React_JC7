@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { onUserLogin } from '../actions';
 
 class LoginBertasbih extends Component {
+    
+    onBtnLoginClick = () => {
+        var username = this.refs.username.refs.tbUsername.value;
+        this.props.onUserLogin(username)
+    }
+
     render() {
         return (
             <div>
@@ -18,8 +26,7 @@ class LoginBertasbih extends Component {
                                 <Input type="password" name="password" id="examplePassword" placeholder="********" />
                             </FormGroup>
                             <Button color="success"
-                                onClick={this.onBtnLoginClick}
-                                >
+                                onClick={this.onBtnLoginClick}>
                                 Login
                             </Button>
                         </Form>
@@ -30,4 +37,4 @@ class LoginBertasbih extends Component {
     }
 }
 
-export default LoginBertasbih;
+export default connect (null, { onUserLogin }) (LoginBertasbih);

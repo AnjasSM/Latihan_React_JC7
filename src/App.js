@@ -18,12 +18,6 @@ class App extends Component {
   onBtnOkClick = () => {
     this.setState({ content: 'Ini comberan'})
   };
-
-  onBtnLoginClick = () => {
-    var username = this.refs.username.refs.tbUsername.value;
-    this.setState({ username })
-  }
-
   render() {
     var { content } = this.state;
     var { username } = this.state;
