@@ -96,7 +96,7 @@ class HeaderTok extends Component {
                 Profile
               </DropdownItem>
               <DropdownItem>
-                Option
+                Setting
               </DropdownItem>
               <DropdownItem divider />
               <DropdownItem>

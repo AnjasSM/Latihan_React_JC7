@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className={"container-fluid"}>
       <HeaderBertasbih 
-        navBrand={"Bertasbih"}
+        navBrand={"Cendol.in"}
           // headerText={"Bertasbih commerce"}
           // kulakin={100-99}
         />
