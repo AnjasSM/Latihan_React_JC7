@@ -8,7 +8,8 @@ class LoginBertasbih extends Component {
     
     onBtnLoginClick = () => {
         var username = this.refs.username.refs.tbUsername.value;
-        this.props.onUserLogin(username )
+        var password = this.refs.password.refs.tbPassword.value;
+        this.props.onUserLogin( {username, password} )
     }
 
     render() {
@@ -23,7 +24,7 @@ class LoginBertasbih extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="examplePassword">Password</Label>
-                                <Input type="password" name="password" id="examplePassword" placeholder="********" />
+                                <Input type="password" name="password" ref="password" innerRef="tbPassword" id="examplePassword" placeholder="********" />
                             </FormGroup>
                             <Button color="success"
                                 onClick={this.onBtnLoginClick}>

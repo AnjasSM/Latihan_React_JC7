@@ -10,7 +10,9 @@ class HomeBertasbih extends Component {
         .then((res) => {
             console.log(res.data)
             this.setState({ listMakanan: res.data })
-        })
+        }).catch((err)=> {
+            console.log(err)
+        }) 
     }
     
     renderListMakanan = () => {
@@ -26,11 +28,14 @@ class HomeBertasbih extends Component {
     }
 
     render() {
+        // console.log(this.state.listMakanan)
         return (
             <div>
-                <h1>Ini Home</h1>
-                {this.renderListMakanan()}
-                <h2>{this.props.pikachu}</h2>
+                <center>
+                    <h1>Ini Home</h1>
+                    {this.renderListMakanan()}
+                    <h2>{this.props.pikachu}</h2>
+                </center>
             </div>
         )
     }
