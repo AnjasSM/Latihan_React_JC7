@@ -13,6 +13,22 @@ class LoginBertasbih extends Component {
         this.props.onUserLogin( {username, password} )
     }
 
+    renderError = () => {
+        if(this.props.error.length > 0) {
+            return <p className="alert alert-danger"></p>
+        }
+    }
+
+    renderButton = () => {
+        if(this.props.loading) {
+            return <h2>Loading...</h2>
+        }
+        return <Button color="success"
+                    onClick={this.onBtnLoginClick}>
+                    Login
+                </Button>
+    }
+
     render() {
         if(this.props.username === "") {
             return (
@@ -32,6 +48,8 @@ class LoginBertasbih extends Component {
                                     onClick={this.onBtnLoginClick}>
                                     Login
                                 </Button>
+                                {this.renderError}
+                                {this.renderButton}
                             </Form>
 
                     </center>
@@ -44,7 +62,11 @@ class LoginBertasbih extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {username: state.username}
+    return {
+        username: state.auth.username,
+        error: state.auth.error,
+        loading: state.auth.loading
+    };
 }
 
 export default connect (mapStateToProps, { onUserLogin }) (LoginBertasbih);

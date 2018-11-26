@@ -10,6 +10,7 @@ class ContentBertasbih extends Component {
 
                 </center>
             </div>
+            
         )
     }
 }

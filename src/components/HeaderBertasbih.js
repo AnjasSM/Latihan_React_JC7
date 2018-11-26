@@ -13,6 +13,7 @@ import {
     DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
+import { onUserLogOut } from '../actions';
 
 class HeaderTok extends Component {
     constructor(props) {
@@ -28,6 +29,11 @@ class HeaderTok extends Component {
           isOpen: !this.state.isOpen
         });
       }
+
+      onLogoutSelect = () => {
+        this.props.onUserLogOut();
+      }
+
     render() { 
         if (this.props.username === "") {
         return(
@@ -42,7 +48,7 @@ class HeaderTok extends Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="">Register</NavLink>
+                    <NavLink href="/signup">Register</NavLink>
                   </NavItem>
                   <NavItem>
                     <Link to="/login">
@@ -99,7 +105,7 @@ class HeaderTok extends Component {
                 Setting
               </DropdownItem>
               <DropdownItem divider />
-              <DropdownItem>
+              <DropdownItem onClick={this.onLogoutSelect}>
                 Log Out
               </DropdownItem>
             </DropdownMenu>
@@ -113,7 +119,7 @@ class HeaderTok extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { username: state.username}
+  return { username: state.auth.username, error: state.auth.error };
 }
 
-export default connect (mapStateToProps)(HeaderTok);
+export default connect (mapStateToProps, { onUserLogOut })(HeaderTok);

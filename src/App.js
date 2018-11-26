@@ -5,6 +5,7 @@ import HeaderBertasbih from './components/HeaderBertasbih';
 import ContentBertasbih from './components/ContentBertasbih';
 import LoginBertasbih from './components/LoginBertasbih';
 import HomeBertasbih from './components/HomeBertasbih';
+import SignUpBertasbih from './components/SignUpBertasbih';
 
 // import FooterBertasbih from './components/FooterBertasbih';
 // import InputBertasbih from './components/InputBertasbih';
@@ -30,6 +31,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component= { HomeBertasbih }/>
           <Route path="/login" component={ LoginBertasbih }/>
+          <Route path="/signup" component={ SignUpBertasbih }/>
         </div>
 
         <ContentBertasbih contentHeader={ content } />
