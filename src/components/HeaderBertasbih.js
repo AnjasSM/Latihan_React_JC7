@@ -13,7 +13,11 @@ import {
     DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
-import { onUserLogOut } from '../actions';
+import { onUserLogOut, keepLogin } from '../actions';
+import Cookies from 'universal-cookie';
+
+
+const cookies = new Cookies();
 
 class HeaderTok extends Component {
     constructor(props) {
@@ -30,8 +34,16 @@ class HeaderTok extends Component {
         });
       }
 
+      componentDidMount() {
+        const username = cookies.get('dataUser');
+        if(username !== undifined) {
+          this.props.keepLogin(username);
+        }
+      }
+
       onLogoutSelect = () => {
         this.props.onUserLogOut();
+        cookies.remove('dataUser');
       }
 
     render() { 
@@ -122,4 +134,4 @@ const mapStateToProps = (state) => {
   return { username: state.auth.username, error: state.auth.error };
 }
 
-export default connect (mapStateToProps, { onUserLogOut })(HeaderTok);
+export default connect (mapStateToProps, { onUserLogOut, keepLogin })(HeaderTok);

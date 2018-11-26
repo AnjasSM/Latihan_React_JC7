@@ -4,9 +4,18 @@ import { Button } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import { onUserLogin } from '../actions';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class LoginBertasbih extends Component {
     
+    componentwillReceiveProps(newProps) {
+        if(newProps.username !== '') {
+            cookies.set('dataUser', newProps.username, { path: '/'})
+        }
+    }
+
     onBtnLoginClick = () => {
         var username = this.refs.username.refs.tbUsername.value;
         var password = this.refs.password.refs.tbPassword.value;

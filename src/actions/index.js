@@ -11,6 +11,10 @@ export const onUserLogOut =() => {
     return { type: Logout}
 }
 
+export const keepLogin = (username) => {
+    return { type: User_Login_Mantappu, payload: username}
+}
+
 export const onUserLogin = ({ username, password }) => {
     // var { username,password} = userdata;
     return (dispatch) => {
