@@ -36,7 +36,7 @@ class HeaderTok extends Component {
 
       componentDidMount() {
         const username = cookies.get('dataUser');
-        if(username !== undifined) {
+        if(username !== undefined) {
           this.props.keepLogin(username);
         }
       }
@@ -60,7 +60,7 @@ class HeaderTok extends Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="/signup">Register</NavLink>
+                    <NavLink href="/register">Register</NavLink>
                   </NavItem>
                   <NavItem>
                     <Link to="/login">
