@@ -15,6 +15,7 @@ export const onUserRegister = ({ username, password, email, phone }) => {
             username, password, email, phone
         }).then((res) => {
             console.log(res)
+            dispatch({ type: User_Login_Mantappu, payload: res.data.username })
         }).catch((err) => {
             console.log(err);
         })
